@@ -32,6 +32,7 @@ const MedalForm = ({ addMedal, updateMedal }) => {
   const resetForm = () => {
     setFormData({ country: "", gold: 0, silver: 0, bronze: 0 });
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <MedalInput
