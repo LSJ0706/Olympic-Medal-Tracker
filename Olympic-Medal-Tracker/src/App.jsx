@@ -1,22 +1,35 @@
-import Input from "./assets/Inputs.jsx";
-import "./App.css";
+import MedalForm from "./components/MedalForm.jsx";
+import MedalList from "./components/MedalList.jsx";
+import { useState } from "react";
+import "./styles/global.css";
 
 function App() {
+  const [medalList, setMedalList] = useState([]);
+
+  const addMedal = (newMedal) => {
+    setMedalList((prev) => [...prev, newMedal]);
+  };
+
+  const updateMedal = (updatedMedal) => {
+    setMedalList((prev) =>
+      prev.map((medal) =>
+        medal.country === updatedMedal.country ? updatedMedal : medal
+      )
+    );
+  };
+
+  const deleteMedal = (country) => {
+    setMedalList((prev) => prev.filter((medal) => medal.country !== country));
+  };
+
   return (
     <>
       <div className="container">
         <header>
           <h2>2024 파리 올림픽</h2>
-          <form>
-            <Input name="국가" type="text"></Input>
-            <Input name="금메달" type="number"></Input>
-            <Input name="은메달" type="number"></Input>
-            <Input name="동메달" type="number"></Input>
-            <button>국가 추가</button>
-            <button>업데이트 </button>
-          </form>
+          <MedalForm addMedal={addMedal} updateMedal={updateMedal} />
         </header>
-        <main>아직 추가된 국가가 없습니다. 메달을 추적하세요!</main>
+        <MedalList medalList={medalList} deleteMedal={deleteMedal} />
       </div>
     </>
   );
