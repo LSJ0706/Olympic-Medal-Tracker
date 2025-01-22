@@ -1,5 +1,5 @@
-import MedalForm from "./components/MedalForm.jsx";
-import MedalList from "./components/MedalList.jsx";
+import MedalForm from "./components/MedalForm/MedalForm.jsx";
+import MedalList from "./components/MedalList/MedalList.jsx";
 import { useState } from "react";
 import "./styles/global.css";
 

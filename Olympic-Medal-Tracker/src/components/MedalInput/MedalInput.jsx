@@ -1,4 +1,11 @@
-const MedalInput = ({ title, placeholder, name, type, value, onChange }) => {
+const MedalInput = ({
+  title,
+  placeholder = null,
+  name,
+  type,
+  value,
+  onChange,
+}) => {
   return (
     <div>
       <label>{title}</label>

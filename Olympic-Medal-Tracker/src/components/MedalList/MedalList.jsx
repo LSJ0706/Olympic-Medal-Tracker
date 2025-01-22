@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "../Button/Button";
 const MedalList = ({ medalList, deleteMedal }) => {
   const handleDelete = (country) => {
     deleteMedal(country);
@@ -11,9 +11,9 @@ const MedalList = ({ medalList, deleteMedal }) => {
         medalList.map((v, idx) => (
           <div key={idx}>
             <div>{v.country}</div>
-            <div>{v.gold}</div>
-            <div>{v.silver}</div>
-            <div>{v.bronze}</div>
+            <div>금메달: {v.gold}개</div>
+            <div>은메달: {v.silver}개</div>
+            <div>동메달: {v.bronze}개</div>
             <Button name="삭제" HandleClick={() => handleDelete(v.country)} />
           </div>
         ))

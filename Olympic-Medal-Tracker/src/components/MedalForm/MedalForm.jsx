@@ -1,5 +1,5 @@
-import MedalInput from "./MedalInput";
-import Button from "./Button";
+import MedalInput from "../MedalInput/MedalInput";
+import Button from "../Button/Button";
 import { useState } from "react";
 const MedalForm = ({ addMedal, updateMedal }) => {
   const [formData, setFormData] = useState({
@@ -13,7 +13,7 @@ const MedalForm = ({ addMedal, updateMedal }) => {
     const { name, value } = event.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: name === "country" ? value : parseInt(value, 10),
     }));
   };
 
