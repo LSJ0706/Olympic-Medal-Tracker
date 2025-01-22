@@ -1,5 +1,6 @@
 import MedalInput from "../MedalInput/MedalInput";
 import Button from "../Button/Button";
+import { validateCountry, validateNum } from "../../utils/validate.js";
 import { useState } from "react";
 const MedalForm = ({ addMedal, updateMedal }) => {
   const [formData, setFormData] = useState({
@@ -13,7 +14,7 @@ const MedalForm = ({ addMedal, updateMedal }) => {
     const { name, value } = event.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: name === "country" ? value : parseInt(value, 10),
+      [name]: name === "country" ? validateCountry(value) : validateNum(value),
     }));
   };
 

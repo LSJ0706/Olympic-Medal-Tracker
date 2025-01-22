@@ -1,25 +1,20 @@
 import MedalForm from "./components/MedalForm/MedalForm.jsx";
 import MedalList from "./components/MedalList/MedalList.jsx";
+import { addMedal, updateMedal, deleteMedal } from "./utils/utils.js";
 import { useState } from "react";
 import "./styles/global.css";
 
 function App() {
   const [medalList, setMedalList] = useState([]);
 
-  const addMedal = (newMedal) => {
-    setMedalList((prev) => [...prev, newMedal]);
+  const addHandle = (newMedal) => {
+    setMedalList((prev) => addMedal(prev, newMedal));
   };
-
-  const updateMedal = (updatedMedal) => {
-    setMedalList((prev) =>
-      prev.map((medal) =>
-        medal.country === updatedMedal.country ? updatedMedal : medal
-      )
-    );
+  const updateHandle = (updatedMedal) => {
+    setMedalList((prev) => updateMedal(prev, updatedMedal));
   };
-
-  const deleteMedal = (country) => {
-    setMedalList((prev) => prev.filter((medal) => medal.country !== country));
+  const deleteHandle = (country) => {
+    setMedalList((prev) => deleteMedal(prev, country));
   };
 
   return (
@@ -27,9 +22,9 @@ function App() {
       <div className="container">
         <header>
           <h2>2024 파리 올림픽</h2>
-          <MedalForm addMedal={addMedal} updateMedal={updateMedal} />
+          <MedalForm addMedal={addHandle} updateMedal={updateHandle} />
         </header>
-        <MedalList medalList={medalList} deleteMedal={deleteMedal} />
+        <MedalList medalList={medalList} deleteMedal={deleteHandle} />
       </div>
     </>
   );
