@@ -1,11 +1,13 @@
 import MedalForm from "./components/MedalForm/MedalForm.jsx";
 import MedalList from "./components/MedalList/MedalList.jsx";
-import { addMedal, updateMedal, deleteMedal } from "./utils/utils.js";
+import { getMedalListFromStorage } from "./utils/storage.js";
+import { addMedal, updateMedal, deleteMedal } from "./utils/medal.js";
 import { useState } from "react";
 import "./styles/global.css";
 
 function App() {
-  const [medalList, setMedalList] = useState([]);
+  const medalLists = getMedalListFromStorage() || [];
+  const [medalList, setMedalList] = useState(medalLists);
 
   const addHandle = (newMedal) => {
     setMedalList((prev) => addMedal(prev, newMedal));
