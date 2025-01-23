@@ -30,15 +30,30 @@ const MedalList = ({ medalList, deleteMedal }) => {
       {medalUI.length === 0 ? (
         <p>아직 추가된 국가가 없습니다. 메달을 추적하세요!</p>
       ) : (
-        medalUI.map((v, idx) => (
-          <div key={idx}>
-            <div>{v.country}</div>
-            <div>금메달: {v.gold}개</div>
-            <div>은메달: {v.silver}개</div>
-            <div>동메달: {v.bronze}개</div>
-            <Button name="삭제" HandleClick={() => handleDelete(v.country)} />
-          </div>
-        ))
+        <table>
+          <thead>
+            <tr>
+              <th>국가명</th>
+              <th>금메달</th>
+              <th>은메달</th>
+              <th>동메달</th>
+              <th>액션</th>
+            </tr>
+          </thead>
+          <tbody>
+            {medalUI.map((v, idx) => (
+              <tr key={idx}>
+                <td>{v.country}</td>
+                <td>{v.gold}</td>
+                <td>{v.silver}</td>
+                <td>{v.bronze}</td>
+                <td>
+                  <button onClick={() => handleDelete(v.country)}>삭제</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
     </div>
   );
