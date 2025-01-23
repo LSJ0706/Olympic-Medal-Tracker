@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Button from "../Button/Button";
-import { sortMedalScore } from "../../utils/medal.js";
+import Button from "../../presentational/Button.jsx";
+import { sortMedalScore } from "../../../utils/medal.js";
 const MedalList = ({ medalList, deleteMedal }) => {
   const [medalUI, setMedalUI] = useState([]);
   const [sortType, setSortType] = useState("default");

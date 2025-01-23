@@ -1,6 +1,6 @@
-import MedalInput from "../MedalInput/MedalInput";
-import Button from "../Button/Button";
-import { validateCountry, validateNum } from "../../utils/validate.js";
+import MedalInput from "../../presentational/MedalInput.jsx";
+import Button from "../../presentational/Button.jsx";
+import { validateCountry, validateNum } from "../../../utils/validate.js";
 import { useState } from "react";
 const MedalForm = ({ addMedal, updateMedal }) => {
   const [formData, setFormData] = useState({

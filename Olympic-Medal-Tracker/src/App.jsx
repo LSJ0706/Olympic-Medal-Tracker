@@ -1,5 +1,5 @@
-import MedalForm from "./components/MedalForm/MedalForm.jsx";
-import MedalList from "./components/MedalList/MedalList.jsx";
+import MedalForm from "./components/container/MedalForm/MedalForm.jsx";
+import MedalList from "./components/container/MedalList/MedalList.jsx";
 import { getMedalListFromStorage } from "./utils/storage.js";
 import { addMedal, updateMedal, deleteMedal } from "./utils/medal.js";
 import { useState } from "react";
