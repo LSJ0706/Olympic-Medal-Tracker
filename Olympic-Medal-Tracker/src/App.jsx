@@ -18,7 +18,6 @@ function App() {
   const deleteHandle = (country) => {
     setMedalList((prev) => deleteMedal(prev, country));
   };
-
   return (
     <>
       <div className="container">

@@ -6,7 +6,9 @@ const addMedal = (medalList, newMedal) => {
     alert("이미 존재하는 국가입니다!");
     return medalList;
   }
-  const newList = [...medalList, newMedal];
+  const newList = [...medalList, newMedal].sort(
+    (a, b) => Number(b.gold) - Number(a.gold)
+  );
   updateMedalListToStorage(newList);
   return newList;
 };
@@ -28,4 +30,12 @@ const deleteMedal = (medalList, country) => {
   updateMedalListToStorage(filterList);
   return filterList;
 };
-export { addMedal, updateMedal, deleteMedal };
+
+const sortMedalScore = (medalList) => {
+  return medalList.sort((a, b) => {
+    const aMedalScore = a.gold + a.silver + a.bronze;
+    const bMedalScore = b.gold + b.silver + b.bronze;
+    return bMedalScore - aMedalScore;
+  });
+};
+export { addMedal, updateMedal, deleteMedal, sortMedalScore };
