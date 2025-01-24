@@ -1,4 +1,5 @@
 # Olympic-Medal-Tracker
+![캡처1](https://github.com/user-attachments/assets/d7b853ab-4675-42ab-8bde-02a9467fa072)
 
 ## 개발 구성원
 프론트 엔드 1명
@@ -25,3 +26,8 @@ https://velog.io/@leesj0706/%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85-%EB%A
 
 - 메달 정렬 이슈
 https://velog.io/@leesj0706/%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85-%EB%A9%94%EB%8B%AC-%EC%A0%95%EB%A0%AC
+
+### 실행 방법
+1. cd Olympic-Medal-Tracker
+2. yarn
+3. yarn dev
