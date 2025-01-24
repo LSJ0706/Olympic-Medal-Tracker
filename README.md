@@ -14,9 +14,10 @@
 <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/>
 
 ## 참여 내용
-- LocalStorage를 이용한 랭킹 저장
+- LocalStorage를 이용한 저장 및 불러오기
 - validate.js 를 통한 alret 에러처리
 - 국가명, 금은동 갯수 입력 처리
+- 금메달 갯수 기준 정렬, 총 메달 갯수 기준 정렬
 
 ## 트러블 슈팅
 - 렌더링 겹침 이슈
