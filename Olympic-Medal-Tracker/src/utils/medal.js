@@ -1,9 +1,9 @@
-import { validateAdd, validateUpdate } from "./validate.js";
+import { validateDuplicate, validateCheckCountry } from "./validate.js";
 import { updateMedalListToStorage } from "./storage.js";
 
 // 새로운 국가 메달 정보를 추가하는 함수
 const addMedal = (medalList, newMedal) => {
-  if (!validateAdd(medalList, newMedal.country)) {
+  if (!validateDuplicate(medalList, newMedal.country)) {
     alert("이미 존재하는 국가입니다!");
     return medalList;
   }
@@ -17,7 +17,7 @@ const addMedal = (medalList, newMedal) => {
 
 // 국가 메달 정보를 업데이트 하는 함수
 const updateMedal = (medalList, updatedMedal) => {
-  if (!validateUpdate(medalList, updatedMedal.country)) {
+  if (!validateCheckCountry(medalList, updatedMedal.country)) {
     alert("아직 추가되지 않은 국가입니다. 먼저 추가해주세요!");
     return medalList;
   }

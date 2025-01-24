@@ -2,7 +2,7 @@ const regexCountry = /[^ㄱ-ㅎ|가-힣\s]/g;
 const regexNum = /^0+|[^0-9]/g;
 
 // 국가 이름 중복 검사 함수
-const validateAdd = (medalList, country) => {
+const validateDuplicate = (medalList, country) => {
   if (medalList.some((medal) => medal.country === country)) {
     return false;
   }
@@ -10,7 +10,7 @@ const validateAdd = (medalList, country) => {
 };
 
 // 국가 일치 검사 함수
-const validateUpdate = (medalList, country) => {
+const validateCheckCountry = (medalList, country) => {
   if (!medalList.some((medal) => medal.country === country)) {
     return false;
   }
@@ -27,4 +27,9 @@ const validateNum = (value) => {
   value = value.replace(regexNum, "");
   return value === "" ? "0" : value;
 };
-export { validateAdd, validateUpdate, validateCountry, validateNum };
+export {
+  validateDuplicate,
+  validateCheckCountry,
+  validateCountry,
+  validateNum,
+};
