@@ -7,9 +7,11 @@ import "./styles/global.css";
 import "./styles/app.css";
 
 function App() {
+  // medalList LocalStorage Load 및 state 적용
   const medalLists = getMedalListFromStorage() || [];
   const [medalList, setMedalList] = useState(medalLists);
 
+  // 생성, 업데이트 삭제 handle 함수
   const addHandle = (newMedal) => {
     setMedalList((prev) => addMedal(prev, newMedal));
   };
@@ -19,6 +21,7 @@ function App() {
   const deleteHandle = (country) => {
     setMedalList((prev) => deleteMedal(prev, country));
   };
+
   return (
     <>
       <div className="container">
