@@ -48,7 +48,12 @@ const MedalList = ({ medalList, deleteMedal }) => {
                 <td>{v.silver}</td>
                 <td>{v.bronze}</td>
                 <td>
-                  <button onClick={() => handleDelete(v.country)}>삭제</button>
+                  <button
+                    className="delete-btn"
+                    onClick={() => handleDelete(v.country)}
+                  >
+                    삭제
+                  </button>
                 </td>
               </tr>
             ))}

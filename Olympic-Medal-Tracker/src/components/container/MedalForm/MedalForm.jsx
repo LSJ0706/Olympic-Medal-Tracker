@@ -35,9 +35,9 @@ const MedalForm = ({ addMedal, updateMedal }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="medalForm" onSubmit={handleSubmit}>
       <MedalInput
-        title="국가"
+        title="국가명"
         name="country"
         type="text"
         value={formData.country}

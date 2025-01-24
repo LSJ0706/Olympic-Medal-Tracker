@@ -2,29 +2,32 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #f0f8ff;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
-
 h2 {
   color: #3216b1;
   font-size: 50px;
 }
 
 input {
-  height: 40px;
-  margin: 10px 15px;
-  border: 1px solid;
+  padding-left: 10px;
+  font-size: 16px;
+  width: 120px;
+  height: 30px;
+  border: 1px solid #ddd;
   border-radius: 8px;
 }
+
 label {
   font-weight: bold;
+  margin-right: 5px;
 }
+
 button {
-  background-color: aliceblue;
+  height: 35px;
+  background-color: #bbbeee;
   margin: 2px;
-  padding: 5px 5px;
   border: 1px solid transparent;
   border-radius: 8px;
   font-size: 1em;
@@ -36,4 +39,24 @@ button {
 
 button:hover {
   background-color: #646cff;
+}
+table {
+  width: 800px;
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+th {
+  background-color: #003366;
+  color: white;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+tr:nth-child(odd) {
+  background-color: #e6e6ff;
 }

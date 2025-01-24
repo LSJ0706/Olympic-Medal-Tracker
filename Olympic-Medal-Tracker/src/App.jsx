@@ -4,6 +4,7 @@ import { getMedalListFromStorage } from "./utils/storage.js";
 import { addMedal, updateMedal, deleteMedal } from "./utils/medal.js";
 import { useState } from "react";
 import "./styles/global.css";
+import "./styles/app.css";
 
 function App() {
   const medalLists = getMedalListFromStorage() || [];
